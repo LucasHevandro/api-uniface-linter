@@ -273,22 +273,7 @@ func writeError(w http.ResponseWriter, status int, msg string) {
 
 func allRules() []ruleInfo {
 	return []ruleInfo{
-		{"NOM001", "Nomenclatura", "Operations devem usar lowerCamelCase com prefixo semântico"},
-		{"NOM002", "Nomenclatura", "Entries devem iniciar com 'pl' + UpperCamelCase"},
-		{"NOM003", "Nomenclatura", "#define deve usar UpperCamelCase ou código de mensagem (ESxxx)"},
-		{"NOM004", "Nomenclatura", "Parâmetros devem iniciar com 'p'"},
-		{"NOM005", "Nomenclatura", "Ordem dos parâmetros: pCdOperador 1º, $t_ds_erro$ sempre último"},
-		{"COMP001", "Complexidade", "PROCs não devem exceder o limite de linhas de código"},
-		{"COMP002", "Complexidade", "Operations devem delegar lógica para PLs (entries)"},
-		{"COMP003", "Complexidade", "PROCs com muitos parâmetros devem usar struct"},
-		{"DOC001", "Documentação", "PROCs devem ter cabeçalho (Descrição, Autor, Criação, Projeto)"},
-		{"DOC002", "Documentação", "Componente deve ter cabeçalho documentado"},
-		{"ERR001", "Tratamento de Erros", "activate/call devem ser seguidos de #include g_vld_erro"},
-		{"ERR002", "Tratamento de Erros", "Evitar verificação manual de $status; usar includes"},
-		{"ERR003", "Tratamento de Erros", "$t_ds_erro$ deve ser parâmetro 'out' e o último"},
-		{"ERR004", "Tratamento de Erros", "Evitar números mágicos; usar constantes #define"},
-		{"GLB001", "Variáveis Globais", "PLs devem evitar variáveis globais ($var$)"},
-		{"GLB002", "Variáveis Globais", "PLs não devem atualizar variáveis de componente (T_xxx)"},
+		{"ERR001", "Tratamento de Erros", "Todo activate ou call deve ser seguido de #include lib_coamo:g_vld_erro"},
 	}
 }
 

@@ -49,7 +49,10 @@ func Analyze(comp *parser.Component, filePath string, cfg Config) *Result {
 	}
 
 	// Registrar todas as regras
-	allRules := []rules.Rule{}
+	allRules := []rules.Rule{
+		// Tratamento de erros
+		&rules.ErrorHandlingRule{},
+	}
 
 	// Filtrar regras desabilitadas
 	disabled := make(map[string]bool)

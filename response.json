@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T00:07:32",
+  "generated_at": "2026-04-15T20:47:07",
   "total_files": 2,
   "total_issues": 28,
   "error_count": 0,
@@ -16,6 +16,14 @@
       "warning_count": 6,
       "info_count": 4,
       "issues": [
+        {
+          "rule_id": "DOC003",
+          "severity": "INFO",
+          "category": "Documentação",
+          "message": "Componente não possui comentários de modificação com referência ao item (ex: ;mpereira 06/07/2021 comlog-397)",
+          "location": "componente CESTO145",
+          "suggestion": "Comente modificações com: ;autor dd/mm/aaaa comlog-XXX"
+        },
         {
           "rule_id": "ERR001",
           "severity": "WARNING",
