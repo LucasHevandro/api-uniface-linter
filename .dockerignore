@@ -1,0 +1,21 @@
+# Binários gerados
+uniface-linter
+uniface-linter.exe
+uniface-linter-api
+
+# Relatórios gerados
+*.json
+!go.mod
+
+# Git
+.git
+.gitignore
+
+# Testes e cobertura
+*.out
+*.test
+
+# IDEs
+.vscode
+.idea
+*.swp

@@ -1,0 +1,7 @@
+{
+  "max_proc_lines": 0,
+  "disabled_rules": null,
+  "output_file": "response.json",
+  "print_summary": false,
+  "fail_on": ""
+}
