@@ -7,31 +7,31 @@ import (
 
 // Config configura o analyzer
 type Config struct {
-	MaxProcLines   int
-	DisabledRules  []string
+	MaxProcLines  int
+	DisabledRules []string
 }
 
 // Result é o resultado da análise de um componente
 type Result struct {
-	ComponentName string       `json:"component_name"`
-	ComponentType string       `json:"component_type"`
-	Description   string       `json:"component_description"`
-	FilePath      string       `json:"file_path"`
-	TotalIssues   int          `json:"total_issues"`
-	ErrorCount    int          `json:"error_count"`
-	WarningCount  int          `json:"warning_count"`
-	InfoCount     int          `json:"info_count"`
+	ComponentName string        `json:"component_name"`
+	ComponentType string        `json:"component_type"`
+	Description   string        `json:"component_description"`
+	FilePath      string        `json:"file_path"`
+	TotalIssues   int           `json:"total_issues"`
+	ErrorCount    int           `json:"error_count"`
+	WarningCount  int           `json:"warning_count"`
+	InfoCount     int           `json:"info_count"`
 	Issues        []rules.Issue `json:"issues"`
-	Summary       Summary      `json:"summary"`
+	Summary       Summary       `json:"summary"`
 }
 
 // Summary agrega os dados por categoria
 type Summary struct {
-	Nomenclatura      int `json:"nomenclatura"`
-	Complexidade      int `json:"complexidade"`
-	Documentacao      int `json:"documentacao"`
-	TratamentoErros   int `json:"tratamento_erros"`
-	VariaveisGlobais  int `json:"variaveis_globais"`
+	Nomenclatura     int `json:"nomenclatura"`
+	Complexidade     int `json:"complexidade"`
+	Documentacao     int `json:"documentacao"`
+	TratamentoErros  int `json:"tratamento_erros"`
+	VariaveisGlobais int `json:"variaveis_globais"`
 }
 
 // Analyze analisa um componente Uniface com base nas convenções COMLOG
@@ -63,7 +63,6 @@ func Analyze(comp *parser.Component, filePath string, cfg Config) *Result {
 		// Documentação
 		&rules.ComponentHeaderRule{},
 		&rules.ProcHeaderRule{},
-		&rules.ModificationCommentRule{},
 		// Tratamento de erros
 		&rules.ErrorHandlingRule{},
 		&rules.RawStatusCheckRule{},
