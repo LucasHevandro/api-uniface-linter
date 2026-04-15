@@ -253,7 +253,6 @@ func printRules() {
 		{"COMP003", "Complexidade", "PROCs com muitos parâmetros devem usar struct"},
 		{"DOC001", "Documentação", "PROCs devem ter cabeçalho (Descrição, Autor, Criação, Projeto)"},
 		{"DOC002", "Documentação", "Componente deve ter cabeçalho documentado"},
-		{"DOC003", "Documentação", "Modificações devem ter comentário com data, autor e item"},
 		{"ERR001", "Tratamento de Erros", "activate/call devem ser seguidos de #include g_vld_erro"},
 		{"ERR002", "Tratamento de Erros", "Evitar verificação manual de $status; usar includes"},
 		{"ERR003", "Tratamento de Erros", "$t_ds_erro$ deve ser parâmetro 'out' e o último"},

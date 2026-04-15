@@ -143,7 +143,7 @@ func TestAnalyze_DisabledRules(t *testing.T) {
 		DisabledRules: []string{
 			"NOM001", "NOM002", "NOM003", "NOM004", "NOM005",
 			"COMP001", "COMP002", "COMP003",
-			"DOC001", "DOC002", "DOC003",
+			"DOC001", "DOC002",
 			"ERR001", "ERR002", "ERR003", "ERR004",
 			"GLB001", "GLB002",
 		},
@@ -190,11 +190,11 @@ func TestAnalyze_SummaryCategorySum(t *testing.T) {
 func TestAnalyze_MaxProcLines(t *testing.T) {
 	// Montar componente com uma operation de 5 linhas
 	comp := &parser.Component{
-		Name:        "TEST001",
-		Type:        "SERVICE",
-		Comment:     "Autor: a\nData: 01/01/2024",
-		Operations:  []parser.ProcUnit{},
-		Entries:     []parser.ProcUnit{},
+		Name:       "TEST001",
+		Type:       "SERVICE",
+		Comment:    "Autor: a\nData: 01/01/2024",
+		Operations: []parser.ProcUnit{},
+		Entries:    []parser.ProcUnit{},
 	}
 
 	// Com threshold muito baixo (1 linha), deve gerar COMP001

@@ -13,7 +13,7 @@ func openAPISpec(version string) map[string]any {
 		"info": map[string]any{
 			"title":       "uniface-linter API",
 			"version":     version,
-			"description": "Analisador estático de componentes Uniface para as convenções COMLOG.\n\nRecebe XMLs exportados do Uniface e retorna um relatório detalhado de violações organizadas por categoria (Nomenclatura, Complexidade, Documentação, Tratamento de Erros, Variáveis Globais).\n\n**Parâmetros de query disponíveis em todos os endpoints POST:**\n- `max_lines` — threshold de linhas para COMP001 (padrão: 100)\n- `disable` — IDs de regras separados por vírgula (ex: `GLB002,DOC003`)",
+			"description": "Analisador estático de componentes Uniface para as convenções COMLOG.\n\nRecebe XMLs exportados do Uniface e retorna um relatório detalhado de violações organizadas por categoria (Nomenclatura, Complexidade, Documentação, Tratamento de Erros, Variáveis Globais).\n\n**Parâmetros de query disponíveis em todos os endpoints POST:**\n- `max_lines` — threshold de linhas para COMP001 (padrão: 100)\n- `disable` — IDs de regras separados por vírgula (ex: `GLB002,DOC002`)",
 			"contact": map[string]any{
 				"name": "COMLOG Team",
 			},
@@ -183,7 +183,7 @@ func queryParams() []map[string]any {
 			"in":          "query",
 			"required":    false,
 			"description": "IDs de regras a desabilitar, separados por vírgula. Case-insensitive.",
-			"schema":      map[string]any{"type": "string", "example": "GLB002,DOC003"},
+			"schema":      map[string]any{"type": "string", "example": "GLB002,DOC002"},
 		},
 	}
 }
@@ -340,13 +340,6 @@ func exampleResult() map[string]any {
 				"message":  "Entry 'plPostLoteFat' usa variáveis globais em PL: $t_ls_contexto$",
 				"location": "entry plPostLoteFat",
 				"line":     185,
-			},
-			{
-				"rule_id":  "DOC003",
-				"severity": "INFO",
-				"category": "Documentação",
-				"message":  "Componente não possui comentários de modificação com referência ao item",
-				"location": "componente CESTO145",
 			},
 		},
 		"summary": map[string]any{

@@ -1,0 +1,291 @@
+{
+  "generated_at": "2026-04-15T00:07:32",
+  "total_files": 2,
+  "total_issues": 28,
+  "error_count": 0,
+  "warning_count": 24,
+  "info_count": 4,
+  "components": [
+    {
+      "component_name": "CESTO145",
+      "component_type": "SERVICE",
+      "component_description": "SIS-CEST AGG CRUD LOT FAT",
+      "file_path": "cpt_cesto145.xml",
+      "total_issues": 10,
+      "error_count": 0,
+      "warning_count": 6,
+      "info_count": 4,
+      "issues": [
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGetLoteFatPK' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGetLoteFatPK",
+          "line": 13,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGetCartMovLtePK' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGetCartMovLtePK",
+          "line": 81,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plPutLoteFat' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plPutLoteFat",
+          "line": 348,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "GLB001",
+          "severity": "WARNING",
+          "category": "Variáveis Globais",
+          "message": "Entry 'plPostLoteFat' usa variáveis globais em PL: $t_ls_contexto$",
+          "location": "entry plPostLoteFat",
+          "line": 185,
+          "suggestion": "Nas PLs, prefira passar e receber informações por parâmetros em vez de variáveis globais"
+        },
+        {
+          "rule_id": "GLB001",
+          "severity": "WARNING",
+          "category": "Variáveis Globais",
+          "message": "Entry 'plPostCartMovLte' usa variáveis globais em PL: $t_ls_contexto$",
+          "location": "entry plPostCartMovLte",
+          "line": 260,
+          "suggestion": "Nas PLs, prefira passar e receber informações por parâmetros em vez de variáveis globais"
+        },
+        {
+          "rule_id": "GLB001",
+          "severity": "WARNING",
+          "category": "Variáveis Globais",
+          "message": "Entry 'plPutLoteFat' usa variáveis globais em PL: $t_ls_contexto$",
+          "location": "entry plPutLoteFat",
+          "line": 348,
+          "suggestion": "Nas PLs, prefira passar e receber informações por parâmetros em vez de variáveis globais"
+        },
+        {
+          "rule_id": "GLB002",
+          "severity": "INFO",
+          "category": "Variáveis Globais",
+          "message": "Entry 'plPostLoteFat' referencia possíveis variáveis de componente: t_ls_contexto",
+          "location": "entry plPostLoteFat",
+          "line": 185,
+          "suggestion": "Evite manter ou atualizar variáveis de componente (T_xxx) em PLs; use parâmetros"
+        },
+        {
+          "rule_id": "GLB002",
+          "severity": "INFO",
+          "category": "Variáveis Globais",
+          "message": "Entry 'plPostCartMovLte' referencia possíveis variáveis de componente: t_ls_contexto",
+          "location": "entry plPostCartMovLte",
+          "line": 260,
+          "suggestion": "Evite manter ou atualizar variáveis de componente (T_xxx) em PLs; use parâmetros"
+        },
+        {
+          "rule_id": "GLB002",
+          "severity": "INFO",
+          "category": "Variáveis Globais",
+          "message": "Entry 'plPutLoteFat' referencia possíveis variáveis de componente: t_ls_contexto",
+          "location": "entry plPutLoteFat",
+          "line": 348,
+          "suggestion": "Evite manter ou atualizar variáveis de componente (T_xxx) em PLs; use parâmetros"
+        }
+      ],
+      "summary": {
+        "nomenclatura": 0,
+        "complexidade": 0,
+        "documentacao": 1,
+        "tratamento_erros": 3,
+        "variaveis_globais": 6
+      }
+    },
+    {
+      "component_name": "CESTO146",
+      "component_type": "SERVICE",
+      "component_description": "SIS-CEST AGG SERV LOT FAT",
+      "file_path": "cpt_cesto146.xml",
+      "total_issues": 18,
+      "error_count": 0,
+      "warning_count": 18,
+      "info_count": 0,
+      "issues": [
+        {
+          "rule_id": "NOM001",
+          "severity": "WARNING",
+          "category": "Nomenclatura",
+          "message": "Operation 'gerarMovEntradaPorProd' não inicia com prefixo semântico reconhecido",
+          "location": "operation gerarMovEntradaPorProd",
+          "line": 1581,
+          "suggestion": "Prefixos válidos: post, get, find, put, del, cancel, efetivar, calcular, atualizar, in, findOrInit, getComUp"
+        },
+        {
+          "rule_id": "NOM001",
+          "severity": "WARNING",
+          "category": "Nomenclatura",
+          "message": "Operation 'gerarLoteFaturamento' não inicia com prefixo semântico reconhecido",
+          "location": "operation gerarLoteFaturamento",
+          "line": 1602,
+          "suggestion": "Prefixos válidos: post, get, find, put, del, cancel, efetivar, calcular, atualizar, in, findOrInit, getComUp"
+        },
+        {
+          "rule_id": "NOM001",
+          "severity": "WARNING",
+          "category": "Nomenclatura",
+          "message": "Operation 'estornaMovtoLotesEntradaProd' não inicia com prefixo semântico reconhecido",
+          "location": "operation estornaMovtoLotesEntradaProd",
+          "line": 1723,
+          "suggestion": "Prefixos válidos: post, get, find, put, del, cancel, efetivar, calcular, atualizar, in, findOrInit, getComUp"
+        },
+        {
+          "rule_id": "NOM001",
+          "severity": "WARNING",
+          "category": "Nomenclatura",
+          "message": "Operation 'gerarMovimentoPorFaturamento' não inicia com prefixo semântico reconhecido",
+          "location": "operation gerarMovimentoPorFaturamento",
+          "line": 1744,
+          "suggestion": "Prefixos válidos: post, get, find, put, del, cancel, efetivar, calcular, atualizar, in, findOrInit, getComUp"
+        },
+        {
+          "rule_id": "NOM001",
+          "severity": "WARNING",
+          "category": "Nomenclatura",
+          "message": "Operation 'gerarMovtoTransfConfirmaNf' não inicia com prefixo semântico reconhecido",
+          "location": "operation gerarMovtoTransfConfirmaNf",
+          "line": 1765,
+          "suggestion": "Prefixos válidos: post, get, find, put, del, cancel, efetivar, calcular, atualizar, in, findOrInit, getComUp"
+        },
+        {
+          "rule_id": "NOM001",
+          "severity": "WARNING",
+          "category": "Nomenclatura",
+          "message": "Operation 'estornaMovtoLotePorFat' não inicia com prefixo semântico reconhecido",
+          "location": "operation estornaMovtoLotePorFat",
+          "line": 1786,
+          "suggestion": "Prefixos válidos: post, get, find, put, del, cancel, efetivar, calcular, atualizar, in, findOrInit, getComUp"
+        },
+        {
+          "rule_id": "NOM001",
+          "severity": "WARNING",
+          "category": "Nomenclatura",
+          "message": "Operation 'gerarPendBaixaEstoquePorDev' não inicia com prefixo semântico reconhecido",
+          "location": "operation gerarPendBaixaEstoquePorDev",
+          "line": 1827,
+          "suggestion": "Prefixos válidos: post, get, find, put, del, cancel, efetivar, calcular, atualizar, in, findOrInit, getComUp"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGetLoteFatPK' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGetLoteFatPK",
+          "line": 12,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGetLoteFatPKCompl' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGetLoteFatPKCompl",
+          "line": 80,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGetCartMovLtePK' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGetCartMovLtePK",
+          "line": 129,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGetCartMovLtePKCompl' tem 2 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGetCartMovLtePKCompl",
+          "line": 233,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plFindLoteFat' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plFindLoteFat",
+          "line": 288,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plFindLoteFatCompl' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plFindLoteFatCompl",
+          "line": 370,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plFindCartMovLte' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plFindCartMovLte",
+          "line": 441,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plFindCartMovLteCompl' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plFindCartMovLteCompl",
+          "line": 532,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plFindLotesComSaldoPorDeposito' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plFindLotesComSaldoPorDeposito",
+          "line": 837,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGerarMovimentoPorFaturamento' tem 3 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGerarMovimentoPorFaturamento",
+          "line": 1037,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        },
+        {
+          "rule_id": "ERR001",
+          "severity": "WARNING",
+          "category": "Tratamento de Erros",
+          "message": "entry 'plGerarMovtoTransfConfirmaNf' tem 1 chamada(s) activate/call sem #include de verificação de erro logo após",
+          "location": "entry plGerarMovtoTransfConfirmaNf",
+          "line": 1164,
+          "suggestion": "Adicione '#include lib_coamo:g_vld_erro' após cada activate ou call"
+        }
+      ],
+      "summary": {
+        "nomenclatura": 7,
+        "complexidade": 0,
+        "documentacao": 0,
+        "tratamento_erros": 11,
+        "variaveis_globais": 0
+      }
+    }
+  ]
+}

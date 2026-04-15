@@ -37,11 +37,11 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) routes() {
-	s.mux.HandleFunc("GET /health",        s.handleHealth)
-	s.mux.HandleFunc("GET /",              s.handleRoot)
-	s.mux.HandleFunc("POST /analyze",      s.handleAnalyze)
-	s.mux.HandleFunc("POST /analyze/batch",s.handleAnalyzeBatch)
-	s.mux.HandleFunc("GET /rules",         s.handleRules)
+	s.mux.HandleFunc("GET /health", s.handleHealth)
+	s.mux.HandleFunc("GET /", s.handleRoot)
+	s.mux.HandleFunc("POST /analyze", s.handleAnalyze)
+	s.mux.HandleFunc("POST /analyze/batch", s.handleAnalyzeBatch)
+	s.mux.HandleFunc("GET /rules", s.handleRules)
 }
 
 // ─── Respostas padrão ────────────────────────────────────────
@@ -77,10 +77,10 @@ func (s *Server) handleRoot(w http.ResponseWriter, r *http.Request) {
 		Version:     s.version,
 		Description: "Analisador estático de componentes Uniface (convenções COMLOG)",
 		Endpoints: map[string]string{
-			"GET  /health":         "Status da API",
-			"GET  /rules":          "Lista todas as regras disponíveis",
-			"POST /analyze":        "Analisa um único arquivo XML (multipart: field 'file')",
-			"POST /analyze/batch":  "Analisa múltiplos arquivos XML (multipart: field 'files')",
+			"GET  /health":        "Status da API",
+			"GET  /rules":         "Lista todas as regras disponíveis",
+			"POST /analyze":       "Analisa um único arquivo XML (multipart: field 'file')",
+			"POST /analyze/batch": "Analisa múltiplos arquivos XML (multipart: field 'files')",
 		},
 	})
 }
@@ -152,14 +152,14 @@ func (s *Server) handleAnalyzeBatch(w http.ResponseWriter, r *http.Request) {
 	}
 
 	type batchReport struct {
-		GeneratedAt  string               `json:"generated_at"`
-		TotalFiles   int                  `json:"total_files"`
-		TotalIssues  int                  `json:"total_issues"`
-		ErrorCount   int                  `json:"error_count"`
-		WarningCount int                  `json:"warning_count"`
-		InfoCount    int                  `json:"info_count"`
-		Components   []*analyzer.Result   `json:"components"`
-		Errors       []string             `json:"errors,omitempty"`
+		GeneratedAt  string             `json:"generated_at"`
+		TotalFiles   int                `json:"total_files"`
+		TotalIssues  int                `json:"total_issues"`
+		ErrorCount   int                `json:"error_count"`
+		WarningCount int                `json:"warning_count"`
+		InfoCount    int                `json:"info_count"`
+		Components   []*analyzer.Result `json:"components"`
+		Errors       []string           `json:"errors,omitempty"`
 	}
 
 	report := batchReport{
@@ -235,7 +235,7 @@ func readMultipartSingle(r *http.Request, field string) ([]byte, string, error) 
 }
 
 // configFromQuery lê parâmetros de configuração da query string
-// Ex: POST /analyze?max_lines=150&disable=GLB002,DOC003
+// Ex: POST /analyze?max_lines=150&disable=GLB002
 func configFromQuery(r *http.Request) analyzer.Config {
 	cfg := analyzer.Config{MaxProcLines: 100}
 
@@ -283,7 +283,6 @@ func allRules() []ruleInfo {
 		{"COMP003", "Complexidade", "PROCs com muitos parâmetros devem usar struct"},
 		{"DOC001", "Documentação", "PROCs devem ter cabeçalho (Descrição, Autor, Criação, Projeto)"},
 		{"DOC002", "Documentação", "Componente deve ter cabeçalho documentado"},
-		{"DOC003", "Documentação", "Modificações devem ter comentário com data, autor e item"},
 		{"ERR001", "Tratamento de Erros", "activate/call devem ser seguidos de #include g_vld_erro"},
 		{"ERR002", "Tratamento de Erros", "Evitar verificação manual de $status; usar includes"},
 		{"ERR003", "Tratamento de Erros", "$t_ds_erro$ deve ser parâmetro 'out' e o último"},

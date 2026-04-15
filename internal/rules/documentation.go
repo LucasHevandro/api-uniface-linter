@@ -14,8 +14,10 @@ import (
 
 type ProcHeaderRule struct{}
 
-func (r *ProcHeaderRule) ID() string          { return "DOC001" }
-func (r *ProcHeaderRule) Description() string  { return "PROCs devem ter cabeçalho com Descrição, Autor, Criação e Projeto" }
+func (r *ProcHeaderRule) ID() string { return "DOC001" }
+func (r *ProcHeaderRule) Description() string {
+	return "PROCs devem ter cabeçalho com Descrição, Autor, Criação e Projeto"
+}
 
 var (
 	reHasDescricao = regexp.MustCompile(`(?i);.*descri`)
@@ -70,8 +72,10 @@ func (r *ProcHeaderRule) Run(ctx *RuleContext) []Issue {
 
 type ComponentHeaderRule struct{}
 
-func (r *ComponentHeaderRule) ID() string          { return "DOC002" }
-func (r *ComponentHeaderRule) Description() string  { return "Componente deve ter cabeçalho documentado (Autor, Data, Função)" }
+func (r *ComponentHeaderRule) ID() string { return "DOC002" }
+func (r *ComponentHeaderRule) Description() string {
+	return "Componente deve ter cabeçalho documentado (Autor, Data, Função)"
+}
 
 func (r *ComponentHeaderRule) Run(ctx *RuleContext) []Issue {
 	var issues []Issue
@@ -91,57 +95,23 @@ func (r *ComponentHeaderRule) Run(ctx *RuleContext) []Issue {
 
 	if !regexp.MustCompile(`(?i)autor`).MatchString(comment) {
 		issues = append(issues, Issue{
-			RuleID:     r.ID(),
-			Severity:   SeverityWarning,
-			Category:   "Documentação",
-			Message:    "Cabeçalho do componente não indica o Autor",
-			Location:   fmt.Sprintf("componente %s", ctx.ComponentName),
+			RuleID:   r.ID(),
+			Severity: SeverityWarning,
+			Category: "Documentação",
+			Message:  "Cabeçalho do componente não indica o Autor",
+			Location: fmt.Sprintf("componente %s", ctx.ComponentName),
 		})
 	}
 
 	if !regexp.MustCompile(`(?i)(data|cria)`).MatchString(comment) {
 		issues = append(issues, Issue{
-			RuleID:     r.ID(),
-			Severity:   SeverityWarning,
-			Category:   "Documentação",
-			Message:    "Cabeçalho do componente não indica a Data de criação",
-			Location:   fmt.Sprintf("componente %s", ctx.ComponentName),
+			RuleID:   r.ID(),
+			Severity: SeverityWarning,
+			Category: "Documentação",
+			Message:  "Cabeçalho do componente não indica a Data de criação",
+			Location: fmt.Sprintf("componente %s", ctx.ComponentName),
 		})
 	}
 
 	return issues
-}
-
-// ============================================================
-// RULE: DOC003 - Comentário em modificações
-// ============================================================
-
-type ModificationCommentRule struct{}
-
-func (r *ModificationCommentRule) ID() string          { return "DOC003" }
-func (r *ModificationCommentRule) Description() string  { return "Modificações devem ter comentário com data, autor e item" }
-
-// Detecta linhas que parecem modificações sem comentário próximo
-// Heurística: bloco de código seguido de bloco comentado (o antigo) sem header de modificação
-var reModifComment = regexp.MustCompile(`(?i);.*\d{2}/\d{2}/\d{4}.*comlog`)
-
-func (r *ModificationCommentRule) Run(ctx *RuleContext) []Issue {
-	// Verificamos se o script como um todo tem algum comentário de modificação
-	// Componentes com mais de 100 linhas e sem nenhum comentário de modificação são suspeitos
-	lines := strings.Split(ctx.Script, "\n")
-	if len(lines) < 100 {
-		return nil
-	}
-
-	if !reModifComment.MatchString(ctx.Script) {
-		return []Issue{{
-			RuleID:     r.ID(),
-			Severity:   SeverityInfo,
-			Category:   "Documentação",
-			Message:    "Componente não possui comentários de modificação com referência ao item (ex: ;mpereira 06/07/2021 comlog-397)",
-			Location:   fmt.Sprintf("componente %s", ctx.ComponentName),
-			Suggestion: "Comente modificações com: ;autor dd/mm/aaaa comlog-XXX",
-		}}
-	}
-	return nil
 }

@@ -27,7 +27,7 @@ func main() {
 	log.Printf("  GET  /rules")
 	log.Printf("  POST /analyze        (field: 'file'  | body XML direto)")
 	log.Printf("  POST /analyze/batch  (field: 'files')")
-	log.Printf("  Parâmetros de query: ?max_lines=100&disable=GLB002,DOC003")
+	log.Printf("  Parâmetros de query: ?max_lines=100&disable=GLB002,DOC002")
 
 	if err := http.ListenAndServe(addr, handler); err != nil {
 		log.Fatalf("Erro ao iniciar servidor: %v", err)

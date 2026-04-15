@@ -11,7 +11,7 @@ type Config struct {
 	// Threshold de linhas para complexidade (padrão: 100)
 	MaxProcLines int `json:"max_proc_lines"`
 
-	// Regras desabilitadas por ID (ex: ["GLB002", "DOC003"])
+	// Regras desabilitadas por ID (ex: ["GLB002", "DOC002"])
 	DisabledRules []string `json:"disabled_rules"`
 
 	// Onde salvar o relatório JSON (padrão: linter-report.json)

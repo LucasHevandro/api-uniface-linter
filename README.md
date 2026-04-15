@@ -92,7 +92,6 @@ Isso cria `.uniface-linter.json`:
 | COMP003 | Complexidade        | PROCs com muitos parâmetros devem usar struct                    |
 | DOC001  | Documentação        | PROCs devem ter cabeçalho (Descrição, Autor, Criação, Projeto)   |
 | DOC002  | Documentação        | Componente deve ter cabeçalho documentado                        |
-| DOC003  | Documentação        | Modificações devem ter comentário com data, autor e item         |
 | ERR001  | Tratamento de Erros | `activate`/`call` devem ser seguidos de `#include g_vld_erro`    |
 | ERR002  | Tratamento de Erros | Evitar verificação manual de `$status`; usar includes            |
 | ERR003  | Tratamento de Erros | `$t_ds_erro$` deve ser parâmetro `out` e o último               |
@@ -180,7 +179,7 @@ uniface-linter/
 │   │   ├── types.go         # Tipos base (Issue, Rule, RuleContext)
 │   │   ├── naming.go        # Regras NOM001-NOM004
 │   │   ├── complexity.go    # Regras COMP001-COMP003
-│   │   ├── documentation.go # Regras DOC001-DOC003
+│   │   ├── documentation.go # Regras DOC001-DOC002
 │   │   ├── error_handling.go# Regras ERR001-ERR004
 │   │   ├── global_vars.go   # Regras GLB001-GLB002
 │   │   └── rules_test.go    # Testes unitários
