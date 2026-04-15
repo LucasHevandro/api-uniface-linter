@@ -1,0 +1,1332 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="10.4" repversion="8" xmlengine="2.0">
+<TABLE>
+<DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="FTYP" seqno="3" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_ACCESS" seqno="4" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="FHEAD" seqno="8" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOLOR" seqno="9" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVPOS" seqno="10" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVSIZ" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="CLRSCRN" seqno="14" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UBORDER" seqno="15" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBIN" seqno="16" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBOT" seqno="17" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="MOVABLE" seqno="18" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOINVERSE" seqno="19" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBRIGHT" seqno="20" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOUNLINE" seqno="21" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBLINK" seqno="22" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPANEL" seqno="23" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="POSPANEL" seqno="24" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPULL" seqno="25" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HIDESTACK" seqno="26" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="27" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UINHERIT" seqno="28" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LIBRAR" seqno="29" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTRANSACT" seqno="30" type="S" level="2" pack="1" scale="0" length="8"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="31" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="32" type="S" level="2" pack="13" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKEYWORDS" seqno="33" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="34" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="TPLACTUAL2" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="INIT" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="CLEAR" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="RETRIEVE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="RECORD" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="STORE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="DELET" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="ACCEPT" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="QUIT" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="INTKEY" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="SPRINT" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="EPRINT" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="ASYNC" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="FRLF" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="FRGF" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="SFUNC" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="GETSTATE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="SETSTATE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="UCTRIGGERS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="FORMPIC" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="TITLE" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="WINPROP" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="USCONTAINED" seqno="63" type="B" level="2" pack="128" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="ATTACHED" seqno="64" type="B" level="2" pack="128" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USPLITPROP" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="USTATEMANAGEDBY" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HTMLSKELETON" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2026-02-03T10:22:54.00</DAT>
+<DAT name="ULABEL">CESTO145</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">3</DAT>
+<DAT name="UDESCR" xml:space='preserve'>SIS-CEST AGG CRUD LOT FAT</DAT>
+<DAT name="TEMPLATENAME">S_ONLINE1</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UTRANSACT">1</DAT>
+<DAT name="UCOMMENT" xml:space='preserve'>Autor    :  Lucas Hevandro
+Data      : 30/03/2021
+Função : Descritivo das alterações
+
+Alterado em : Data da alteração(dd/mm/aaaa)
+Alterado por : Nome de quem alterou
+Alteração : Descrição da alteração
+</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>variables
+  numeric         T_CD_OPERADOR             ; Codigo do Operador
+  string          T_DS_ERRO                 ; Descrição do Erro
+  string          T_LS_CONTEXTO             ; Contexto do Erro
+  string          T_LS_DATACON              ; Função $dataerrorcontext
+  string          T_LS_PROCCON              ; Função $procerrorcontext
+  string          T_NM_ENTIDADE             ; Nome da entidade
+endvariables
+#define BreakInheritance_cpt_GENERAL
+#define $triggerAbbr=DEFN
+#Comment start_of_mappings
+#ifdefined GENERICA
+#info symbol GENERICA is already or also defined as a global or local constant
+#endif
+#define GENERICA=CEST_LOTEFAT.CEST
+#Comment 
+
+#ifdefined UNQ_GENERICA
+#info symbol UNQ_GENERICA is already or also defined as a global or local constant
+#endif
+#define UNQ_GENERICA=CEST_LOTEFAT
+#Comment 
+
+#Comment end_of_mappings
+#undefine $triggerAbbr
+
+
+
+#define $triggerAbbr=DEFN
+#ifdefined FORM
+#info symbol FORM is already or also defined as a global or local constant
+#endif
+#define FORM=0
+#Comment Define se form ou service
+
+;#Mensagens
+#define ES227 = "ES227"; Parâmetros Obrigatórios
+#undefine $triggerAbbr
+</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>#startdefine
+
+#define $triggerAbbr=LPMX
+#include LIB_COAMO:G_VALIDA_CONST
+#include LIB_COAMO:G_TRATA_ERRO
+#include LIB_COAMO:G_HIST_ALT
+
+;|
+;Descrição: Buscar um lote de faturamento através da chave PK.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+entry plGetLoteFatPK
+	params
+		numeric pTpDepFabr : in
+		numeric pCdDepFabr : in
+		numeric pNrLote : in
+		struct pStResult: out
+				 $t_ds_erro$ : out
+	endparams	
+	variables
+		string vDsMetodo, vDsMsg
+		struct vStLote
+	endvariables
+	
+	$t_ds_erro$ = ""
+	vDsMetodo = "plGetLoteFatPK_"
+
+	if(pTpDepFabr = "")
+		vDsMsg = "O Tp Depósito de Fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pCdDepFabr = "")
+		vDsMsg = "O Código do depósito de Fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pNrLote = "")
+		vDsMsg = "O Número do Lote é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	clear/e "cest_lotefat"
+	tp_depfabr.cest_lotefat = pTpDepFabr
+	cd_depfabr.cest_lotefat = pCdDepFabr
+	nr_lote.cest_lotefat = pNrLote
+	retrieve/e "cest_lotefat"
+	if ($status &lt; 0)
+		if ($status = -2)
+			clear/e "cest_lotefat"
+			vDsMsg = "Lote não encontrado para o Tp Deposito: %%pTpDepFabr%%%, Cd: %%pCdDepFabr%%%,  número: %%pNrLote%%%."
+			activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+			#include lib_coamo:g_vld_erro
+			return &lt;g_erroexec&gt;
+		else			
+			call pl_erro_trgmsg
+			return &lt;g_erroexec&gt;
+		endif	
+	endif
+	
+	componentToStruct vStLote, "cest_lotefat"
+	#include lib_coamo:g_vld_erro
+	
+	pStResult-&gt;CEST_LOTEFAT.CEST = vStLote
+
+	return(0)
+end;plGetLoteFatPK
+
+;|
+;Descrição: Buscar uma movimentação de carteira pela chave PK
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+entry plGetCartMovLtePK
+	params
+		numeric pTpDepFabr : in
+		numeric pCdDepFabr : in
+		numeric pNrLote : in
+		numeric pTpMatricula : in
+		numeric pCdMatricula : in
+		date pDtMovto : in
+		numeric pNrSeqLancto : in
+		struct pStResult: out
+				 $t_ds_erro$ : out
+	endparams	
+	variables
+		string vDsMetodo, vDsMsg
+		struct vStCarteira
+	endvariables
+	
+	$t_ds_erro$ = ""
+	vDsMetodo = "plGetCartMovLtePK_"
+
+	if(pTpDepFabr = "")
+		vDsMsg = "O Tp Depósito de Fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pCdDepFabr = "")
+		vDsMsg = "O Código do depósito de Fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pNrLote = "")
+		vDsMsg = "O Número do Lote é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pTpMatricula = "")
+		vDsMsg = "O Tipo de Matricula é um parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pCdMatricula = "")
+		vDsMsg = "O Código de Matricula é um parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pDtMovto = "")
+		vDsMsg = "A Data do Movimento é um parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	if(pNrSeqLancto = "")
+		vDsMsg = "A Número da Sequência de Lançamento é um parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return &lt;g_erroexec&gt;
+	endif
+
+	clear/e "cest_cartmovlte"
+	tp_depfabr.cest_cartmovlte = ptpDepFabr
+	cd_depfabr.cest_cartmovlte = pCdDepFabr
+	nr_lote.cest_cartmovlte = pNrLote
+	tp_matricula.cest_cartmovlte = pTpMatricula
+	cd_matricula.cest_cartmovlte = pCdMatricula
+	dt_movto.cest_cartmovlte = pDtMovto
+	nr_seqlancto.cest_cartmovlte = pNrSeqLancto
+	retrieve/e "cest_cartmovlte"
+	if ($status &lt; 0)
+		if ($status = -2)
+			clear/e "cest_cartmovlte"
+			vDsMsg = "Movimentação de carteira não encontrado."
+			activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+			#include lib_coamo:g_vld_erro
+			return &lt;g_erroexec&gt;
+		else
+			call pl_erro_trgmsg
+			return &lt;g_erroexec&gt;
+		endif	
+	endif
+	
+	componentToStruct vStCarteira, "cest_cartmovlte"
+	#include lib_coamo:g_vld_erro
+	
+	pStResult-&gt;CEST_CARTMOVLTE.CEST = vStCarteira
+
+	return(0)
+end;plGetCartMovLtePK
+
+;|
+;Descrição: Realizar a gravação de um registro no lote de faturamento.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+entry plPostLoteFat
+	params
+		numeric pCdOperador : in
+		struct pStLote : in
+		struct pStResult    : out
+		       $t_ds_erro$  : out
+	endparams
+	variables
+		string vDsMsg, vDsMetodo
+		Numeric vCdUnidade, vNrLote, vCdProduto, vNrSeqLancto, vIdOccLote, vTpDepFabr, vCdDepFabr
+		Date vDtFabricacao, vDtVencimento
+		struct vStLote
+		boolean vInExiste
+	endvariables
+
+	$t_ds_erro$ = ""
+	vDsMetodo = "plPostLoteFat_"
+	
+	if(pCdOperador = "")
+		vDsMsg = "Código do Operador é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+
+	vTpDepFabr = pStLote-&gt;OCC-&gt;TP_DEPFABR
+	vCdDepFabr = pStLote-&gt;OCC-&gt;CD_DEPFABR
+	vNrLote = pStLote-&gt;OCC-&gt;NR_LOTE
+	vCdProduto = pStLote-&gt;OCC-&gt;CD_PRODUTO
+	vDtFabricacao = pStLote-&gt;OCC-&gt;DT_FABRICACAO
+	vDtVencimento = pStLote-&gt;OCC-&gt;DT_VENCIMENTO
+
+	activate/stateless "CESTO146".findLoteFat(pStLote, vInExiste, "", $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+
+	if(vInExiste)
+		$t_ds_erro$ = "Lote %%vNrLote%%% já está cadastrado!"
+		return(&lt;g_erroexec&gt;)
+	endif
+
+	clear/e "cest_lotefat"
+
+	activate "gsiso004".id_ocorrencia("CEST_LOTEFAT", vIdOccLote, $t_ds_erro$, $t_ls_contexto$)
+	#include lib_coamo:g_vld_erro
+	
+	tp_depfabr.cest_lotefat = vTpDepFabr
+	cd_depfabr.cest_lotefat = vCdDepFabr
+	nr_lote.cest_lotefat = vNrLote
+	id_occ.cest_lotefat = vIdOccLote
+	cd_produto.cest_lotefat = vCdProduto
+	dt_fabricacao.cest_lotefat = vDtFabricacao
+	dt_vencimento.cest_lotefat = vDtVencimento
+	nr_seqlancto.cest_lotefat = 0
+	cd_operador.cest_lotefat = pCdOperador
+	dt_transacao.cest_lotefat = $datim
+	
+	call plValidateFieldsLoteFat(vDsMetodo)
+	#include lib_coamo:g_vld_erro	
+
+	store/e "cest_lotefat"
+	#include lib_coamo:g_vld_erro
+
+	componentToStruct vStLote, "cest_lotefat"
+	#include lib_coamo:g_vld_erro
+
+	pStResult-&gt;CEST_LOTEFAT.CEST = vStLote
+	
+	return(0)
+end;plPostLoteFat
+
+;|
+;Descrição: Realizar a gravação de um registro na carteira de movimentação.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+entry plPostCartMovLte
+	params
+		numeric pCdOperador : in
+		struct pStCarteira	: in
+		struct pStResult    : out
+		       $t_ds_erro$  : out
+	endparams
+	variables
+		string vDsMsg, vDsMetodo, vDsDocto
+		Numeric vCdUnidade, vNrLote, vTpMatricula, vCdMatricula, vNrSeqLancto, vCdNatop, vNrProcesso, vNrLanctoOrig, vQtMovimento, vIdOccCarteira, vTpDepFabr, vCdDepFabr
+		Date VDtMovto
+		struct vStCarteira
+		Boolean vInEstorno
+	endvariables
+
+	$t_ds_erro$ = ""
+	vDsMetodo = "plPostCartMovLte_"
+	
+	if(pCdOperador = "")
+		vDsMsg = "Código do Operador é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+
+	vTpDepFabr = pStCarteira-&gt;OCC-&gt;TP_DEPFABR
+	vCdDepFabr = pStCarteira-&gt;OCC-&gt;CD_DEPFABR
+	vNrLote = pStCarteira-&gt;OCC-&gt;NR_LOTE
+	vTpMatricula = pStCarteira-&gt;OCC-&gt;TP_MATRICULA
+	vCdMatricula = pStCarteira-&gt;OCC-&gt;CD_MATRICULA
+	vDtMovto = pStCarteira-&gt;OCC-&gt;DT_MOVTO
+	vCdNatop = pStCarteira-&gt;OCC-&gt;CD_NATOP
+	vNrProcesso = pStCarteira-&gt;OCC-&gt;NR_PROCESSO
+	vDsDocto = pStCarteira-&gt;OCC-&gt;NR_DOCTO
+	vQtMovimento = pStCarteira-&gt;OCC-&gt;QT_MOVIMENTO	
+	vInEstorno = pStCarteira-&gt;OCC-&gt;IN_ESTORNO
+	vNrLanctoOrig = pStCarteira-&gt;OCC-&gt;NR_LANCTOORIG	
+
+	clear/e "cest_cartmovlte"
+
+	activate "gsiso004".id_ocorrencia("CEST_CARTMOVLTE", vIdOccCarteira, $t_ds_erro$, $t_ls_contexto$)
+	#include lib_coamo:g_vld_erro
+	
+	selectdb max(nr_seqlancto) from "cest_lotefat" u_where (tp_depfabr.cest_lotefat = vTpDepFabr &amp; %\
+	cd_depfabr.cest_lotefat = vCdDepFabr &amp; nr_lote.cest_lotefat = vNrLote) to vNrSeqLancto
+	#include lib_coamo:g_vld_erro
+	
+	vNrSeqLancto = vNrSeqLancto + 1
+	
+	tp_depfabr.cest_cartmovlte = vTpDepFabr 
+	cd_depfabr.cest_cartmovlte = vCdDepFabr
+	nr_lote.cest_cartmovlte = vNrLote
+	tp_matricula.cest_cartmovlte = vTpMatricula
+	cd_matricula.cest_cartmovlte = vCdMatricula
+	dt_movto.cest_cartmovlte = VDtMovto
+	nr_seqlancto.cest_cartmovlte = vNrSeqLancto
+	cd_natop.cest_cartmovlte = vCdNatop
+	nr_processo.cest_cartmovlte = vNrProcesso
+	nr_docto.cest_cartmovlte = vDsDocto
+	qt_movimento.cest_cartmovlte = vQtMovimento
+	in_estorno.cest_cartmovlte = vInEstorno
+	nr_lanctoorig.cest_cartmovlte = vNrLanctoOrig
+	cd_operador.cest_cartmovlte = pCdOperador
+	dt_transacao.cest_cartmovlte = $datim
+	
+	call plValidateFieldsCartMovLte(vDsMetodo)
+	#include lib_coamo:g_vld_erro
+
+	store/e "cest_cartmovlte"
+	#include lib_coamo:g_vld_erro
+	
+	;Atualizar o numero de sequencia de lançamento no cadastro do lote.
+	activate "CESTO146".atualizarNumeroLanctoLote(pCdOperador, vTpDepFabr, vCdDepFabr, vNrLote, nr_seqlancto.cest_cartmovlte, $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+	
+	componentToStruct vStCarteira, "cest_cartmovlte"
+	#include lib_coamo:g_vld_erro
+
+	pStResult-&gt;CEST_CARTMOVLTE.CEST = vStCarteira
+	
+	return(0)
+end;plPostCartMovLte
+
+;|
+;Descrição:Realizar alteração em um registro no lote de faturamento.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953 
+entry plPutLoteFat
+	params
+		numeric pCdOperador : in
+		numeric pTpDepFabr : in
+		numeric pCdDepFabr : in
+		numeric pNrLote : in
+		struct pStLote	 : in
+		struct pStResult : out
+		       $t_ds_erro$ : out
+	endparams
+	variables
+		string vDsMetodo, vDsMsg, vLsOcc
+		struct vStLote
+		numeric vNrSeqLancto
+	endvariables
+
+	$t_ds_erro$ = ""
+	vDsMetodo = "plPutLoteFat_"
+		
+	if(pCdOperador = "")
+		vDsMsg = "Código do Operador é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, vDsMetodo,  vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	call plGetLoteFatPK(pTpDepFabr, pCdDepFabr, pNrLote, "", $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+
+	putlistitems/occ vLsOcc, "cest_lotefat"
+
+	activate "cesto147".gera_historico("CEST_LOTEFAT", $componentname, 1, %\
+	pCdOperador, $datim, vLsOcc, $t_ds_erro$, $t_ls_contexto$)
+	#include lib_coamo:g_vld_erro
+
+	cd_produto.cest_lotefat = pStLote-&gt;OCC-&gt;CD_PRODUTO
+	dt_fabricacao.cest_lotefat = pStLote-&gt;OCC-&gt;DT_FABRICACAO
+	dt_vencimento.cest_lotefat = pStLote-&gt;OCC-&gt;DT_VENCIMENTO
+	nr_seqlancto.cest_lotefat = pStLote-&gt;OCC-&gt;NR_SEQLANCTO
+	cd_operador.cest_lotefat = pCdOperador
+	dt_transacao.cest_lotefat = $datim
+	
+	call plValidateFieldsLoteFat(vDsMetodo)
+	#include lib_coamo:g_vld_erro
+
+	store/e "cest_lotefat"
+	#include lib_coamo:g_vld_erro
+	
+	componentToStruct vStLote, "cest_lotefat"
+	#include lib_coamo:g_vld_erro
+
+	pStResult-&gt;CEST_LOTEFAT.CEST = vStLote
+
+	return (0)
+end;plPutLoteFat
+
+;|
+;Descrição: Validar os campos da entidade CEST_LOTEFAT
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953 
+entry plValidateFieldsLoteFat
+	params
+		string pDsMetodo : in
+	endparams
+	variables
+		string vDsMsg 
+	endvariables
+
+	if(tp_depfabr.cest_lotefat = "")
+		vDsMsg = "O Tp Deposito de fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	if(cd_depfabr.cest_lotefat = "")
+		vDsMsg = "O Cd Deposito de fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+
+	if(nr_lote.cest_lotefat = "")
+		vDsMsg = "Número do lote é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(cd_produto.cest_lotefat = "")
+		vDsMsg = "Código do Produto é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	if(dt_fabricacao.cest_lotefat = "")
+		vDsMsg = "A data de fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	if(dt_vencimento.cest_lotefat = "")
+		vDsMsg = "Data de Vencimento é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	if(cd_operador.cest_lotefat = "")
+		vDsMsg = "Operador é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	return(0)
+end;plValidateFieldsLoteFat
+
+;|
+;Descrição: Validar os campos da entidade CEST_CARTMOVLTE
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953 
+entry plValidateFieldsCartMovLte
+	params
+		string pDsMetodo : in
+	endparams
+	variables
+		string vDsMsg 
+	endvariables
+
+	if(tp_depfabr.cest_cartmovlte = "")
+		vDsMsg = "O Tp Deposito de fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	if(cd_depfabr.cest_cartmovlte = "")
+		vDsMsg = "O Cd Deposito de fabricação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	if(nr_lote.cest_cartmovlte = "")
+		vDsMsg = "Número do Lote é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(tp_matricula.cest_cartmovlte = "")
+		vDsMsg = "Tipo de Matricula é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(cd_matricula.cest_cartmovlte = "")
+		vDsMsg = "Código de Matricula é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(dt_movto.cest_cartmovlte = "")
+		vDsMsg = "Data do Movimento é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(nr_seqlancto.cest_cartmovlte = "")
+		vDsMsg = "Número da Sequência de Lançamento é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(cd_natop.cest_cartmovlte = "")
+		vDsMsg = "Código da Natureza da Operação é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(nr_processo.cest_cartmovlte = "")
+		vDsMsg = "Número do Processo é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(nr_docto.cest_cartmovlte = "")
+		vDsMsg = "Tipo de Matricula é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(qt_movimento.cest_cartmovlte = "")
+		vDsMsg = "Quantidade do movimento é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(in_estorno.cest_cartmovlte = "")
+		vDsMsg = "Indicador de estorno é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif	
+
+	if(cd_operador.cest_cartmovlte = "")
+		vDsMsg = "Operador é parâmetro obrigatório."
+		activate "gsiso032".montarListaParaMensagem(&lt;ES227&gt;, $componentname, pDsMetodo, vDsMsg, "", $t_ds_erro$)
+		#include lib_coamo:g_vld_erro
+		return (&lt;g_erroexec&gt;)
+	endif
+	
+	return(0)
+end;plValidateFieldsCartMovLte
+
+#enddefine
+
+
+#startdefine
+
+#define $triggerAbbr=OPER
+;|
+;Descrição: Buscar um lote de faturamento através da chave PK.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+operation getLoteFatPK
+	params
+		numeric pTpDepFabr : in
+		numeric pCdDepFabr : in
+		numeric pNrLote : in
+		struct pStResult: out
+				 $t_ds_erro$ : out
+	endparams
+
+	$t_ds_erro$ = ""
+
+	call plGetLoteFatPK(pTpDepFabr, pCdDepFabr, pNrLote, pStResult, $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+
+	return(0)
+end;getLoteFat
+
+;|
+;Descrição: Buscar uma movimentação de carteira pela chave PK
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+operation getCartMovLtePK
+	params
+		numeric pTpDepFabr : in
+		numeric pCdDepFabr : in
+		numeric pNrLote : in
+		numeric pTpMatricula : in
+		numeric pCdMAtricula : in
+		date pDtMovto : in
+		numeric pNrSeqLancto : in
+		struct pStResult : out
+				 $t_ds_erro$ : out
+	endparams
+
+	$t_ds_erro$ = ""
+
+	call plGetCartMovLtePK(pTpDepFabr, pCdDepFabr, pNrLote, pTpMatricula, pCdMAtricula, pDtMovto, pNrSeqLancto, pStResult, $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+
+	return(0)
+end;getCartMovLte
+
+;|
+;Descrição: Realizar a gravação de um registro no lote de faturamento.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+operation postLoteFat
+	params
+		numeric pCdOperador : in
+		struct pStLoteFat : in
+		struct pStResult : out
+				 $t_ds_erro$ : out
+	endparams
+
+	$t_ds_erro$ = ""
+
+	call plPostLoteFat(pCdOperador, pStLoteFat, pStResult, $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+
+	return(0)
+end;postLoteFat
+
+;|
+;Descrição: Realizar a gravação de um registro ma carteira de movimentação.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+operation postCartMovLte
+	params
+		numeric pCdOperador : in
+		struct pStCartMovLte : in
+		struct pStResult : out
+				 $t_ds_erro$ : out
+	endparams
+
+	$t_ds_erro$ = ""
+
+	call plPostCartMovLte(pCdOperador, pStCartMovLte, pStResult, $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+
+	return(0)
+end;postCartMovLte
+
+;|
+;Descrição:Realizar alteração em um registro no lote de faturamento.
+;Autor: Lucas Hevandro
+;Criação: 07/04/2022
+;Projeto: COMLOG-953
+operation putLoteFat
+	params
+		numeric pCdOperador : in
+		numeric pTpDepFabr : in
+		numeric pCdDepFabr : in
+		numeric pNrLote : in
+		struct pStDados   	: in
+		struct pStResult    : out
+		       $t_ds_erro$  : out
+	endparams
+
+	$t_ds_erro$ = ""
+
+	call plPutLoteFat(pCdOperador, pTpDepFabr, pCdDepFabr, pNrLote, pStDados, pStResult, $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+
+	return(0)
+end;putLoteFat
+
+;|
+;Descrição:
+;Autor: Lucas Hevandro
+;Criação:
+;Projeto: 
+;operation putCartMovLte
+;	params
+;		numeric pCdOperador : in
+;		numeric pNrLote : in
+;		numeric pCdUndFabr : in
+;		numeric pTpMatricula : in
+;		numeric pCdMatricula : in
+;		date pDtMovto : in
+;		numeric pNrSeqLancto : in
+;		struct pStDados   	: in
+;		struct pStResult    : out
+;		       $t_ds_erro$  : out
+;	endparams
+
+;	$t_ds_erro$ = ""
+
+;	call plPutCartMovLte(pCdOperador, pNrLote, pCdUndFabr, pTpMatricula, pCdMatricula, pDtMovto, pNrSeqLancto, pStDados, pStResult, $t_ds_erro$)
+;	#include lib_coamo:g_vld_erro
+
+;	return(0)
+;end;putCartMovLte
+
+#enddefine</DAT>
+<DAT name="FORMPIC" xml:space='preserve'>
+ &uFRM;TYP=E&uSEP;NAM=CEST_LOTEFAT.CEST&uSEP;WID=22&uSEP;HEI=5&uSEP;HOC=22&uSEP;VOC=5&uFRM;
+  &uFRM;TYP=F&uSEP;NAM=NM_UNIDADE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=NM_PRODUTO&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+
+ &uFRM;TYP=E&uSEP;NAM=CEST_CARTMOVLTE.CEST&uSEP;WID=22&uSEP;HEI=5&uSEP;HOC=22&uSEP;VOC=5&uFRM;
+  &uFRM;TYP=F&uSEP;NAM=NM_UNIDADE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=NM_MATRICULA&uSEP;WID=20&uSEP;HEI=1&uFRM;</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UBASE" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UFORM" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,1" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BORD" seqno="8" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DB_ACCESS" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_UPD" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINR" seqno="11" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXR" seqno="12" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="13" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="14" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="15" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="16" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="17" type="S" level="2" pack="13" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKEYWORDS" seqno="18" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="19" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UCOLL_SCRIPT" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="UOCC_SCRIPT" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="GETOCC" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="PUTOCC" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="DELOCC" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="LCK" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="UNLOCK" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="GETSEGM" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="ADDOCC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="DELOCCR" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="CREOCC" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="FINDOCC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="BREAK" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="VLDE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VLDK" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="PRLO" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="PSLO" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="PRSO" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="PSSO" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="UEOOPERS" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="UECOPERS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="UECTRIGGERS" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="FLIST" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="U_OBJSVC" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="UEOINTERFACE" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="UECINTERFACE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2022-04-05T17:14:08.00</DAT>
+<DAT name="ULABEL">CEST_CARTMOVLTE</DAT>
+<DAT name="UBASE">CEST</DAT>
+<DAT name="UFORM">CESTO145</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>#define BreakInheritance_ent_CEST_CARTMOVLTE_P_WRIT
+#define $triggerAbbr=DEFE
+
+#undefine $triggerAbbr
+</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>#startdefine
+
+#define $triggerAbbr=WRIT
+trigger write
+#include LIB_COAMO:G_WRITE
+
+#enddefine</DAT>
+<DAT name="FLIST">*</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2022-04-05T17:14:08.00</DAT>
+<DAT name="ULABEL">CEST_LOTEFAT</DAT>
+<DAT name="UBASE">CEST</DAT>
+<DAT name="UFORM">CESTO145</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_UPD">Y</DAT>
+<DAT name="TEMPLATENAME">GENERICA</DAT>
+<DAT name="UINHERIT">T</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>#define BreakInheritance_ent_CEST_LOTEFAT_P_WRIT
+#define $triggerAbbr=DEFE
+
+#undefine $triggerAbbr
+</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>#startdefine
+
+#define $triggerAbbr=WRIT
+trigger write
+#include LIB_COAMO:G_WRITE
+
+#enddefine</DAT>
+<DAT name="FLIST">*</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="GRP" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,1" />
+<FLD name="UBASE" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,2" />
+<FLD name="UFORM" seqno="5" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="104,3,1" />
+<FLD name="UKVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UMVERSION" seqno="7" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UDESCR" seqno="8" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="9" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="12" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="14" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="15" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="16" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="17" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="18" type="S" level="2" pack="13" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKEYWORDS" seqno="19" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="20" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="STARTMOD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="NEXTFLD" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="PREVFLD" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="ENCRYPT" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="DECRYPT" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="UFORMAT" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="DEFORMAT" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="GETFOCUS" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="VCHANGED" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2022-04-06T07:50:43.00</DAT>
+<DAT name="ULABEL">NM_MATRICULA</DAT>
+<DAT name="GRP">CEST_CARTMOVLTE</DAT>
+<DAT name="UBASE">CEST</DAT>
+<DAT name="UFORM">CESTO145</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Nome</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">@LIB::NOME</DAT>
+<DAT name="U_INT">@LIB::NOME</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>#startdefine
+
+#define $triggerAbbr=ERRF
+trigger error
+#include LIB_COAMO:G_ONERROR
+
+#enddefine</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2022-03-31T13:57:27.00</DAT>
+<DAT name="ULABEL">NM_PRODUTO</DAT>
+<DAT name="GRP">CEST_LOTEFAT</DAT>
+<DAT name="UBASE">CEST</DAT>
+<DAT name="UFORM">CESTO145</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Nome</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">@LIB::NOME</DAT>
+<DAT name="U_INT">@LIB::NOME</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>#startdefine
+
+#define $triggerAbbr=ERRF
+trigger error
+#include LIB_COAMO:G_ONERROR
+
+#enddefine</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2022-04-06T07:50:25.00</DAT>
+<DAT name="ULABEL">NM_UNIDADE</DAT>
+<DAT name="GRP">CEST_CARTMOVLTE</DAT>
+<DAT name="UBASE">CEST</DAT>
+<DAT name="UFORM">CESTO145</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Nome</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">@LIB::NOME</DAT>
+<DAT name="U_INT">@LIB::NOME</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>#startdefine
+
+#define $triggerAbbr=ERRF
+trigger error
+#include LIB_COAMO:G_ONERROR
+
+#enddefine</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="UTIMESTAMP">2022-03-31T13:56:15.00</DAT>
+<DAT name="ULABEL">NM_UNIDADE</DAT>
+<DAT name="GRP">CEST_LOTEFAT</DAT>
+<DAT name="UBASE">CEST</DAT>
+<DAT name="UFORM">CESTO145</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Nome</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">@LIB::NOME</DAT>
+<DAT name="U_INT">@LIB::NOME</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>#startdefine
+
+#define $triggerAbbr=ERRF
+trigger error
+#include LIB_COAMO:G_ONERROR
+
+#enddefine</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>
