@@ -302,3 +302,101 @@ end;`
 		}
 	}
 }
+
+// ============================================================
+// DOC001 - Cabeçalho obrigatório nas PROCs
+// ============================================================
+
+func TestDOC001_ValidHeader(t *testing.T) {
+	r := &rules.ProcHeaderRule{}
+	unit := parser.ProcUnit{
+		Name:          "plValid",
+		Kind:          "entry",
+		HeaderComment: ";|\n;Descrição: Faz algo\n;Autor: Fulano\n;Criação: 01/01/2024\n;Projeto: 123",
+	}
+	ctx := makeCtx(nil, []parser.ProcUnit{unit})
+
+	issues := r.Run(ctx)
+	if len(issues) > 0 {
+		t.Errorf("não esperava issues para cabeçalho válido, got %d", len(issues))
+	}
+}
+
+func TestDOC001_MissingOneField(t *testing.T) {
+	r := &rules.ProcHeaderRule{}
+	unit := parser.ProcUnit{
+		Name:          "plMissing",
+		Kind:          "entry",
+		HeaderComment: ";|\n;Descrição: Faz algo\n;Autor: Fulano\n;Criação: 01/01/2024",
+	}
+	ctx := makeCtx(nil, []parser.ProcUnit{unit})
+
+	issues := r.Run(ctx)
+	if len(issues) != 1 {
+		t.Fatalf("esperava 1 issue, got %d", len(issues))
+	}
+	if issues[0].Severity != rules.SeverityWarning {
+		t.Errorf("esperava severidade Warning, got %s", issues[0].Severity)
+	}
+}
+
+func TestDOC001_MissingThreeFields(t *testing.T) {
+	r := &rules.ProcHeaderRule{}
+	unit := parser.ProcUnit{
+		Name:          "plMissing",
+		Kind:          "entry",
+		HeaderComment: ";|\n;Descrição: Faz algo",
+	}
+	ctx := makeCtx(nil, []parser.ProcUnit{unit})
+
+	issues := r.Run(ctx)
+	if len(issues) != 1 {
+		t.Fatalf("esperava 1 issue, got %d", len(issues))
+	}
+	if issues[0].Severity != rules.SeverityError {
+		t.Errorf("esperava severidade Error, got %s", issues[0].Severity)
+	}
+}
+
+// ============================================================
+// DOC002 - Cabeçalho do componente
+// ============================================================
+
+func TestDOC002_ValidHeader(t *testing.T) {
+	r := &rules.ComponentHeaderRule{}
+	ctx := makeCtx(nil, nil)
+	ctx.Comment = "Autor: Teste\nData: 01/01/2024\nFunção: Validar"
+
+	issues := r.Run(ctx)
+	if len(issues) > 0 {
+		t.Errorf("não esperava issues para comentário de componente válido, got %d", len(issues))
+	}
+}
+
+func TestDOC002_EmptyHeader(t *testing.T) {
+	r := &rules.ComponentHeaderRule{}
+	ctx := makeCtx(nil, nil)
+	ctx.Comment = "   \n"
+
+	issues := r.Run(ctx)
+	if len(issues) != 1 {
+		t.Fatalf("esperava 1 issue para comentário vazio, got %d", len(issues))
+	}
+	if issues[0].Severity != rules.SeverityError {
+		t.Errorf("esperava severidade Error, got %s", issues[0].Severity)
+	}
+}
+
+func TestDOC002_MissingData(t *testing.T) {
+	r := &rules.ComponentHeaderRule{}
+	ctx := makeCtx(nil, nil)
+	ctx.Comment = "Autor: Fulano\nFunção: Validar"
+
+	issues := r.Run(ctx)
+	if len(issues) != 1 {
+		t.Fatalf("esperava 1 issue para data faltando, got %d", len(issues))
+	}
+	if issues[0].Severity != rules.SeverityWarning {
+		t.Errorf("esperava severidade Warning, got %s", issues[0].Severity)
+	}
+}

@@ -52,6 +52,8 @@ func Analyze(comp *parser.Component, filePath string, cfg Config) *Result {
 	allRules := []rules.Rule{
 		// Tratamento de erros
 		&rules.ErrorHandlingRule{},
+		&rules.ProcHeaderRule{},
+		&rules.ComponentHeaderRule{},
 	}
 
 	// Filtrar regras desabilitadas
