@@ -203,6 +203,81 @@ end;`
 	}
 }
 
+func TestERR001_ReturnErroExec(t *testing.T) {
+	r := &rules.ErrorHandlingRule{}
+	body := `entry plPostFixacao
+	params
+		$t_ds_erro$ : out
+	endparams
+	activate "serv001".postFixacao(pCdOperador, $t_ds_erro$)
+	return<g_erroexec>
+	return 0
+end;`
+
+	ctx := makeCtx([]parser.ProcUnit{}, []parser.ProcUnit{
+		{Name: "plPostFixacao", Kind: "entry", Body: body, LineStart: 1},
+	})
+
+	issues := r.Run(ctx)
+	for _, i := range issues {
+		if i.RuleID == "ERR001" {
+			t.Errorf("não esperava ERR001 quando return<g_erroexec> está presente: %s", i.Message)
+		}
+	}
+}
+
+func TestERR001_MultiLineContinuationWithInclude(t *testing.T) {
+	r := &rules.ErrorHandlingRule{}
+	// activate quebrado em duas linhas com %\ — o include vem após a linha de continuação
+	body := `entry plPostFixacao
+	params
+		$t_ds_erro$ : out
+	endparams
+	activate "cesto147".gera_historico("CEST_LOTEFAT", $componentname, 1, %\
+	pCdOperador, $datim, vLsOcc, $t_ds_erro$)
+	#include lib_coamo:g_vld_erro
+	return 0
+end;`
+
+	ctx := makeCtx([]parser.ProcUnit{}, []parser.ProcUnit{
+		{Name: "plPostFixacao", Kind: "entry", Body: body, LineStart: 1},
+	})
+
+	issues := r.Run(ctx)
+	for _, i := range issues {
+		if i.RuleID == "ERR001" {
+			t.Errorf("não esperava ERR001 para activate multi-linha com #include presente: %s", i.Message)
+		}
+	}
+}
+
+func TestERR001_MultiLineContinuationWithoutInclude(t *testing.T) {
+	r := &rules.ErrorHandlingRule{}
+	body := `entry plPostFixacao
+	params
+		$t_ds_erro$ : out
+	endparams
+	activate "cesto147".gera_historico("CEST_LOTEFAT", $componentname, 1, %\
+	pCdOperador, $datim, vLsOcc, $t_ds_erro$)
+	return 0
+end;`
+
+	ctx := makeCtx([]parser.ProcUnit{}, []parser.ProcUnit{
+		{Name: "plPostFixacao", Kind: "entry", Body: body, LineStart: 1},
+	})
+
+	issues := r.Run(ctx)
+	found := false
+	for _, i := range issues {
+		if i.RuleID == "ERR001" {
+			found = true
+		}
+	}
+	if !found {
+		t.Error("esperava ERR001 para activate multi-linha sem tratamento de erro")
+	}
+}
+
 func TestERR001_IncludeWithBlankLineBetween(t *testing.T) {
 	r := &rules.ErrorHandlingRule{}
 	// Linha em branco entre call e #include: ainda deve ser aceito

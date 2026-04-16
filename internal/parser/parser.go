@@ -74,9 +74,17 @@ func stripDoctype(s string) string {
 }
 
 func sanitizeEntities(s string) string {
-	// Substitui entidades Uniface por placeholder vazio
+	// Substitui entidades Uniface por placeholder vazio, 
+	// mas preserva as entidades padrões do XML para o unmarshal não quebrar '<' e '>'
 	re := regexp.MustCompile(`&[a-zA-Z][a-zA-Z0-9_]*;`)
-	return re.ReplaceAllString(s, "")
+	return re.ReplaceAllStringFunc(s, func(match string) string {
+		switch match {
+		case "&lt;", "&gt;", "&amp;", "&quot;", "&apos;":
+			return match
+		default:
+			return ""
+		}
+	})
 }
 
 type unifaceXML struct {

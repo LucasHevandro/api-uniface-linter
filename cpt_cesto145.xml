@@ -261,7 +261,9 @@ entry plGetLoteFatPK
 			return &lt;g_erroexec&gt;
 		else			
 			call pl_erro_trgmsg
-			return &lt;g_erroexec&gt;
+			if($status &lt; 0)
+
+			endif	
 		endif	
 	endif
 	
