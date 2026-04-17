@@ -3,7 +3,9 @@
     "allow": [
       "Bash(go test *)",
       "Bash(go build *)",
-      "Read(//mnt/c/Users/Lusca/Documents/Projects/api-uniface-linter/internal/**)"
+      "Read(//mnt/c/Users/Lusca/Documents/Projects/api-uniface-linter/internal/**)",
+      "Bash(go vet *)",
+      "Bash(go list *)"
     ]
   }
 }

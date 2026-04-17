@@ -23,13 +23,13 @@ type Component struct {
 
 // ProcUnit representa uma operation ou entry
 type ProcUnit struct {
-	Name        string
-	Kind        string // "operation" ou "entry"
-	Params      []Param
-	Variables   []string
-	Body        string
-	LineStart   int
-	LineEnd     int
+	Name          string
+	Kind          string // "operation" ou "entry"
+	Params        []Param
+	Variables     []string
+	Body          string
+	LineStart     int
+	LineEnd       int
 	HeaderComment string
 }
 
@@ -74,7 +74,7 @@ func stripDoctype(s string) string {
 }
 
 func sanitizeEntities(s string) string {
-	// Substitui entidades Uniface por placeholder vazio, 
+	// Substitui entidades Uniface por placeholder vazio,
 	// mas preserva as entidades padrões do XML para o unmarshal não quebrar '<' e '>'
 	re := regexp.MustCompile(`&[a-zA-Z][a-zA-Z0-9_]*;`)
 	return re.ReplaceAllStringFunc(s, func(match string) string {
@@ -158,17 +158,17 @@ func detectType(datMap map[string]string) string {
 }
 
 var (
-	reOperation = regexp.MustCompile(`(?m)^\s*(operation|entry)\s+(\S+)\s*$`)
-	reParams    = regexp.MustCompile(`(?m)^\s*params\s*$`)
-	reEndParams = regexp.MustCompile(`(?m)^\s*endparams\s*$`)
-	reEnd       = regexp.MustCompile(`(?m)^\s*end;`)
-	reVariables = regexp.MustCompile(`(?m)^\s*variables\s*$`)
-	reEndVars   = regexp.MustCompile(`(?m)^\s*endvariables\s*$`)
+	reOperation    = regexp.MustCompile(`(?m)^\s*(operation|entry)\s+(\S+)\s*$`)
+	reParams       = regexp.MustCompile(`(?m)^\s*params\s*$`)
+	reEndParams    = regexp.MustCompile(`(?m)^\s*endparams\s*$`)
+	reEnd          = regexp.MustCompile(`(?m)^\s*end;`)
+	reVariables    = regexp.MustCompile(`(?m)^\s*variables\s*$`)
+	reEndVars      = regexp.MustCompile(`(?m)^\s*endvariables\s*$`)
 	reParam        = regexp.MustCompile(`(?m)^\s*(numeric|string|boolean|struct|date|datetime|float)\s+(\S+)\s*:\s*(in|out|inout)`)
 	reParamSpecial = regexp.MustCompile(`(?m)^\s*(\$[a-zA-Z_][a-zA-Z0-9_]*\$)\s*:\s*(in|out|inout)`)
 	reDefine       = regexp.MustCompile(`(?m)^#define\s+(\S+)\s*=`)
-	reGlobalVar = regexp.MustCompile(`(?m)^\s*\$[a-zA-Z_][a-zA-Z0-9_]*\$`)
-	reInclude   = regexp.MustCompile(`(?m)^#include\s+(\S+)`)
+	reGlobalVar    = regexp.MustCompile(`(?m)^\s*\$[a-zA-Z_][a-zA-Z0-9_]*\$`)
+	reInclude      = regexp.MustCompile(`(?m)^#include\s+(\S+)`)
 )
 
 func parseScript(script string) (ops []ProcUnit, entries []ProcUnit) {
@@ -307,4 +307,52 @@ func ExtractIncludes(code string) []string {
 		includes = append(includes, strings.TrimSpace(m[1]))
 	}
 	return includes
+}
+
+// ParseScriptExported expõe parseScript para uso externo (ex: análise de código avulso)
+func ParseScriptExported(script string) (ops []ProcUnit, entries []ProcUnit) {
+	return parseScript(script)
+}
+
+// ParseRawCode recebe código Uniface avulso (sem XML) e retorna um Component sintético.
+// Útil para analisar trechos colados diretamente, sem exportar o componente inteiro.
+func ParseRawCode(code string, componentName string) *Component {
+	ops, entries := parseScript(code)
+	return &Component{
+		Name:       componentName,
+		Type:       "SERVICE",
+		Script:     code,
+		Operations: ops,
+		Entries:    entries,
+	}
+}
+
+// FilterByName retorna um Component contendo apenas as ProcUnits cujo nome
+// contém (case-insensitive) o filtro informado.
+// O Script, Comment e Declarations do componente original são preservados
+// para que regras de nível de componente (DOC002, DOC003) continuem funcionando.
+func FilterByName(comp *Component, name string) *Component {
+	nameLower := strings.ToLower(strings.TrimSpace(name))
+
+	filtered := &Component{
+		Name:         comp.Name,
+		Type:         comp.Type,
+		Description:  comp.Description,
+		Comment:      comp.Comment,
+		Declarations: comp.Declarations,
+		Script:       comp.Script,
+	}
+
+	for _, op := range comp.Operations {
+		if strings.Contains(strings.ToLower(op.Name), nameLower) {
+			filtered.Operations = append(filtered.Operations, op)
+		}
+	}
+	for _, e := range comp.Entries {
+		if strings.Contains(strings.ToLower(e.Name), nameLower) {
+			filtered.Entries = append(filtered.Entries, e)
+		}
+	}
+
+	return filtered
 }

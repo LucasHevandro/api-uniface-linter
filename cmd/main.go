@@ -68,6 +68,8 @@ func main() {
 	var configPath, outputPath, failOn string
 	var quiet bool
 	var files []string
+	var procFilter string
+	var rawMode bool
 
 	for i := 0; i < len(args); i++ {
 		switch args[i] {
@@ -88,6 +90,13 @@ func main() {
 			if i < len(args) {
 				failOn = strings.ToUpper(args[i])
 			}
+		case "--proc":
+			i++
+			if i < len(args) {
+				procFilter = args[i]
+			}
+		case "--raw":
+			rawMode = true
 		default:
 			// Pode ser arquivo ou diretório
 			expanded, err := expandPaths(args[i])
@@ -129,20 +138,48 @@ func main() {
 	for _, file := range files {
 		fmt.Printf("Analisando: %s\n", file)
 
+		analyzerCfg := analyzer.Config{
+			MaxProcLines:  cfg.MaxProcLines,
+			DisabledRules: cfg.DisabledRules,
+		}
+
+		if rawMode {
+			data, err := os.ReadFile(file)
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "  ✗ Erro ao ler %s: %v\n", file, err)
+				continue
+			}
+			result := analyzer.AnalyzeRawCode(string(data), filepath.Base(file), analyzerCfg)
+			if result.TotalProcs == 0 {
+				fmt.Printf("  → nenhuma proc encontrada em '%s'\n", file)
+				continue
+			}
+			fmt.Printf("  → %d proc(s) analisada(s), %d problema(s)\n",
+				result.TotalProcs, result.TotalIssues)
+			results = append(results, partialToResult(result))
+			continue
+		}
+
 		comp, err := parser.Parse(file)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "  ✗ Erro ao parsear %s: %v\n", file, err)
 			continue
 		}
 
-		analyzerCfg := analyzer.Config{
-			MaxProcLines:  cfg.MaxProcLines,
-			DisabledRules: cfg.DisabledRules,
+		if procFilter != "" {
+			result := analyzer.AnalyzeProc(comp, procFilter, analyzerCfg)
+			if result.TotalProcs == 0 {
+				fmt.Printf("  → nenhuma proc encontrada com o filtro '%s'\n", procFilter)
+				continue
+			}
+			fmt.Printf("  → %d proc(s) analisada(s), %d problema(s)\n",
+				result.TotalProcs, result.TotalIssues)
+			results = append(results, partialToResult(result))
+		} else {
+			result := analyzer.Analyze(comp, file, analyzerCfg)
+			results = append(results, result)
+			fmt.Printf("  → %d problema(s) encontrado(s)\n", result.TotalIssues)
 		}
-
-		result := analyzer.Analyze(comp, file, analyzerCfg)
-		results = append(results, result)
-		fmt.Printf("  → %d problema(s) encontrado(s)\n", result.TotalIssues)
 	}
 
 	if len(results) == 0 {
@@ -165,6 +202,20 @@ func main() {
 
 	// Exit code baseado no fail-on
 	os.Exit(exitCode(results, cfg.FailOn))
+}
+
+func partialToResult(p *analyzer.PartialResult) *analyzer.Result {
+	return &analyzer.Result{
+		ComponentName: p.ComponentName + " [parcial: " + p.Filter + "]",
+		ComponentType: "—",
+		FilePath:      p.ComponentName,
+		TotalIssues:   p.TotalIssues,
+		ErrorCount:    p.ErrorCount,
+		WarningCount:  p.WarningCount,
+		InfoCount:     p.InfoCount,
+		Issues:        p.Issues,
+		Summary:       p.Summary,
+	}
 }
 
 func expandPaths(path string) ([]string, error) {

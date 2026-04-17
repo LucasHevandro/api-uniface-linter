@@ -161,6 +161,97 @@ func openAPISpec(version string) map[string]any {
 					},
 				},
 			},
+			"/analyze/proc": map[string]any{
+				"post": map[string]any{
+					"tags":        []string{"Análise"},
+					"summary":     "Analisar uma proc específica",
+					"description": "Analisa apenas as operations/entries cujo nome contém o filtro `proc`.\n\nIdeal para **code review**: o revisor informa o nome da proc alterada e recebe o feedback apenas sobre ela, sem analisar o componente inteiro.\n\nAceita busca parcial — `?proc=post` retorna todas as procs que contenham 'post' no nome.",
+					"operationId": "analyzeProcByName",
+					"parameters": append(queryParams(), map[string]any{
+						"name":        "proc",
+						"in":          "query",
+						"required":    true,
+						"description": "Nome ou parte do nome da proc a analisar. Case-insensitive.",
+						"schema":      map[string]any{"type": "string", "example": "plPostFixacaoMi"},
+					}),
+					"requestBody": map[string]any{
+						"required": true,
+						"content": map[string]any{
+							"multipart/form-data": map[string]any{
+								"schema": map[string]any{
+									"type":     "object",
+									"required": []string{"file"},
+									"properties": map[string]any{
+										"file": map[string]any{"type": "string", "format": "binary"},
+									},
+								},
+							},
+							"application/xml": map[string]any{
+								"schema": map[string]any{"type": "string", "format": "binary"},
+							},
+						},
+					},
+					"responses": map[string]any{
+						"200": map[string]any{
+							"description": "Análise parcial concluída",
+							"content": map[string]any{
+								"application/json": map[string]any{
+									"schema": map[string]any{"$ref": "#/components/schemas/PartialResult"},
+								},
+							},
+						},
+						"400": map[string]any{"$ref": "#/components/responses/BadRequest"},
+						"404": map[string]any{
+							"description": "Nenhuma proc encontrada com o filtro informado",
+							"content": map[string]any{
+								"application/json": map[string]any{
+									"schema": map[string]any{"$ref": "#/components/schemas/ErrorResponse"},
+								},
+							},
+						},
+						"422": map[string]any{"$ref": "#/components/responses/UnprocessableEntity"},
+					},
+				},
+			},
+			"/analyze/raw": map[string]any{
+				"post": map[string]any{
+					"tags":        []string{"Análise"},
+					"summary":     "Analisar código avulso",
+					"description": "Analisa código Uniface colado diretamente no body, **sem precisar do XML completo**.\n\nIdeal para validar rapidamente uma proc antes de commitar, ou durante code review quando só o trecho alterado está disponível.\n\nO body deve conter o código Uniface em texto puro (entry/operation + params + body + end).",
+					"operationId": "analyzeRawCode",
+					"parameters": append(queryParams(), map[string]any{
+						"name":        "name",
+						"in":          "query",
+						"required":    false,
+						"description": "Nome do componente exibido no relatório (opcional).",
+						"schema":      map[string]any{"type": "string", "example": "CESTO145"},
+					}),
+					"requestBody": map[string]any{
+						"required":    true,
+						"description": "Código Uniface em texto puro",
+						"content": map[string]any{
+							"text/plain": map[string]any{
+								"schema": map[string]any{
+									"type":    "string",
+									"example": ";|\n;Descricao: Cria fixacao\n;Autor: dev\n;Criacao: 01/01/2024\n;Projeto: COMLOG-241\noperation postFixacaoMi\n\tparams\n\t\tnumeric pCdOperador : in\n\t\t$t_ds_erro$ : out\n\tendparams\n\treturn 0\nend;",
+								},
+							},
+						},
+					},
+					"responses": map[string]any{
+						"200": map[string]any{
+							"description": "Análise do código avulso concluída",
+							"content": map[string]any{
+								"application/json": map[string]any{
+									"schema": map[string]any{"$ref": "#/components/schemas/PartialResult"},
+								},
+							},
+						},
+						"400": map[string]any{"$ref": "#/components/responses/BadRequest"},
+						"422": map[string]any{"$ref": "#/components/responses/UnprocessableEntity"},
+					},
+				},
+			},
 		},
 		"components": map[string]any{
 			"schemas":   schemas(),
@@ -284,6 +375,32 @@ func schemas() map[string]any {
 			"required": []string{"error"},
 			"properties": map[string]any{
 				"error": map[string]any{"type": "string", "example": "arquivo XML vazio ou não enviado (field: 'file')"},
+			},
+		},
+		"PartialResult": map[string]any{
+			"type":        "object",
+			"description": "Resultado de análise parcial (proc específica ou código avulso)",
+			"required":    []string{"mode", "component_name", "procs_analyzed", "total_procs", "total_issues", "issues", "summary"},
+			"properties": map[string]any{
+				"mode": map[string]any{
+					"type":        "string",
+					"enum":        []string{"proc_filter", "raw_code"},
+					"description": "proc_filter = filtrado por nome dentro do XML | raw_code = código avulso sem XML",
+				},
+				"component_name": map[string]any{"type": "string", "example": "CESTO145"},
+				"filter":         map[string]any{"type": "string", "example": "plPostFixacaoMi", "description": "Filtro usado (só no modo proc_filter)"},
+				"procs_analyzed": map[string]any{"type": "array", "items": map[string]any{"type": "string"}, "example": []string{"entry plPostFixacaoMi"}},
+				"total_procs":    map[string]any{"type": "integer", "example": 1},
+				"total_issues":   map[string]any{"type": "integer", "example": 3},
+				"error_count":    map[string]any{"type": "integer", "example": 0},
+				"warning_count":  map[string]any{"type": "integer", "example": 2},
+				"info_count":     map[string]any{"type": "integer", "example": 1},
+				"issues": map[string]any{
+					"type":     "array",
+					"items":    map[string]any{"$ref": "#/components/schemas/Issue"},
+					"nullable": true,
+				},
+				"summary": map[string]any{"$ref": "#/components/schemas/Summary"},
 			},
 		},
 	}

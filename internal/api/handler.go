@@ -42,6 +42,10 @@ func (s *Server) routes() {
 	s.mux.HandleFunc("POST /analyze", s.handleAnalyze)
 	s.mux.HandleFunc("POST /analyze/batch", s.handleAnalyzeBatch)
 	s.mux.HandleFunc("GET /rules", s.handleRules)
+	s.mux.HandleFunc("POST /analyze/proc", s.handleAnalyzeProc)
+	s.mux.HandleFunc("POST /analyze/raw", s.handleAnalyzeRaw)
+	s.mux.HandleFunc("GET /openapi.json", s.handleOpenAPISpec)
+	s.mux.HandleFunc("GET /docs", s.handleSwaggerUI)
 }
 
 // ─── Respostas padrão ────────────────────────────────────────
@@ -196,10 +200,97 @@ func (s *Server) handleAnalyzeBatch(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, http.StatusOK, report)
 }
 
-// ─── Helpers ─────────────────────────────────────────────────
+// handleAnalyzeProc analisa uma proc específica dentro de um XML.
+// Requer o parâmetro de query ?proc=nomeDaProc
+// Aceita multipart (field: file) ou body XML direto.
+//
+// Exemplos:
+//
+//	POST /analyze/proc?proc=plPostFixacaoMi   → analisa só essa entry
+//	POST /analyze/proc?proc=post              → analisa todas que contenham "post"
+func (s *Server) handleAnalyzeProc(w http.ResponseWriter, r *http.Request) {
+	procFilter := strings.TrimSpace(r.URL.Query().Get("proc"))
+	if procFilter == "" {
+		writeError(w, http.StatusBadRequest,
+			"parâmetro 'proc' obrigatório. Ex: ?proc=plPostFixacaoMi")
+		return
+	}
 
-func analyzeXML(data []byte, filename string, cfg analyzer.Config) (*analyzer.Result, error) {
-	// Gravar em arquivo temporário (o parser precisa de path)
+	cfg := configFromQuery(r)
+
+	var xmlData []byte
+	var filename string
+	var err error
+
+	ct := r.Header.Get("Content-Type")
+	if strings.HasPrefix(ct, "multipart/form-data") {
+		xmlData, filename, err = readMultipartSingle(r, "file")
+	} else {
+		xmlData, err = io.ReadAll(io.LimitReader(r.Body, maxUploadSize))
+		filename = r.Header.Get("X-Filename")
+		if filename == "" {
+			filename = "componente.xml"
+		}
+	}
+
+	if err != nil || len(xmlData) == 0 {
+		writeError(w, http.StatusBadRequest, "arquivo XML ausente ou vazio")
+		return
+	}
+
+	// Parsear o XML completo
+	comp, err := parseXMLBytes(xmlData, filename)
+	if err != nil {
+		writeError(w, http.StatusUnprocessableEntity, err.Error())
+		return
+	}
+
+	result := analyzer.AnalyzeProc(comp, procFilter, cfg)
+
+	if result.TotalProcs == 0 {
+		writeError(w, http.StatusNotFound,
+			fmt.Sprintf("nenhuma proc encontrada com o filtro '%s' em '%s'",
+				procFilter, comp.Name))
+		return
+	}
+
+	writeJSON(w, http.StatusOK, result)
+}
+
+// handleAnalyzeRaw analisa código Uniface colado diretamente no body,
+// sem precisar do XML completo do componente.
+//
+// Parâmetro opcional: ?name=MeuComponente (nome exibido no relatório)
+//
+// Exemplo:
+//
+//	POST /analyze/raw?name=CESTO145
+//	Content-Type: text/plain
+//	Body: entry plPostFixacaoMi ...
+func (s *Server) handleAnalyzeRaw(w http.ResponseWriter, r *http.Request) {
+	code, err := io.ReadAll(io.LimitReader(r.Body, maxUploadSize))
+	if err != nil || len(code) == 0 {
+		writeError(w, http.StatusBadRequest, "body vazio — envie o código Uniface no body da requisição")
+		return
+	}
+
+	componentName := strings.TrimSpace(r.URL.Query().Get("name"))
+	cfg := configFromQuery(r)
+
+	result := analyzer.AnalyzeRawCode(string(code), componentName, cfg)
+
+	if result.TotalProcs == 0 {
+		writeError(w, http.StatusUnprocessableEntity,
+			"nenhuma operation ou entry encontrada no código enviado")
+		return
+	}
+
+	writeJSON(w, http.StatusOK, result)
+}
+
+// parseXMLBytes parseia o XML e retorna o Component, sem rodar as regras.
+// Separa responsabilidades: o caller decide o que fazer com o componente.
+func parseXMLBytes(data []byte, filename string) (*parser.Component, error) {
 	tmp, err := os.CreateTemp("", "uniface-*.xml")
 	if err != nil {
 		return nil, fmt.Errorf("erro interno ao criar arquivo temporário")
@@ -216,9 +307,18 @@ func analyzeXML(data []byte, filename string, cfg analyzer.Config) (*analyzer.Re
 	if err != nil {
 		return nil, fmt.Errorf("falha ao parsear XML '%s': %v", filename, err)
 	}
+	return comp, nil
+}
 
-	result := analyzer.Analyze(comp, filename, cfg)
-	return result, nil
+// ─── Helpers ─────────────────────────────────────────────────
+
+// analyzeXML parseia e analisa em um só passo (mantido para compatibilidade)
+func analyzeXML(data []byte, filename string, cfg analyzer.Config) (*analyzer.Result, error) {
+	comp, err := parseXMLBytes(data, filename)
+	if err != nil {
+		return nil, err
+	}
+	return analyzer.Analyze(comp, filename, cfg), nil
 }
 
 func readMultipartSingle(r *http.Request, field string) ([]byte, string, error) {
