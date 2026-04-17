@@ -282,6 +282,8 @@ func allRules() []ruleInfo {
 		{"COMP002", "Complexidade", "Operations devem delegar lógica para PLs (entries pl...)"},
 		{"COMP003", "Complexidade", "PROCs com muitos parâmetros devem usar struct para agrupá-los"},
 		{"ERR001", "Tratamento de Erros", "Todo activate ou call deve ser seguido de #include lib_coamo:g_vld_erro ou return<g_erroexec>"},
+		{"DOC001", "Documentação", "PROCs devem ter cabeçalho com Descrição, Autor, Criação e Projeto"},
+		{"DOC002", "Documentação", "Componente deve ter cabeçalho documentado (Autor, Data, Função)"},
 	}
 }
 
