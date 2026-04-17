@@ -50,10 +50,18 @@ func Analyze(comp *parser.Component, filePath string, cfg Config) *Result {
 
 	// Registrar todas as regras
 	allRules := []rules.Rule{
+		// Nomenclatura
+		&rules.NamingOperationsRule{},
+		&rules.NamingEntriesRule{},
+		&rules.NamingDefinesRule{},
+		&rules.NamingParamsVarsRule{},
+		&rules.ParamOrderRule{},
+		// Complexidade
+		&rules.ProcSizeRule{MaxLines: cfg.MaxProcLines},
+		&rules.OperationDelegatesRule{},
+		&rules.ParamCountRule{},
 		// Tratamento de erros
 		&rules.ErrorHandlingRule{},
-		&rules.ProcHeaderRule{},
-		&rules.ComponentHeaderRule{},
 	}
 
 	// Filtrar regras desabilitadas

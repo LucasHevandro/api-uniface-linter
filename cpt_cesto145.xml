@@ -469,7 +469,7 @@ entry plPostCartMovLte
 	variables
 		string vDsMsg, vDsMetodo, vDsDocto
 		Numeric vCdUnidade, vNrLote, vTpMatricula, vCdMatricula, vNrSeqLancto, vCdNatop, vNrProcesso, vNrLanctoOrig, vQtMovimento, vIdOccCarteira, vTpDepFabr, vCdDepFabr
-		Date VDtMovto
+		Date vDtMovto
 		struct vStCarteira
 		Boolean vInEstorno
 	endvariables

@@ -273,7 +273,15 @@ func writeError(w http.ResponseWriter, status int, msg string) {
 
 func allRules() []ruleInfo {
 	return []ruleInfo{
-		{"ERR001", "Tratamento de Erros", "Todo activate ou call deve ser seguido de #include lib_coamo:g_vld_erro"},
+		{"NOM001", "Nomenclatura", "Operations devem usar lowerCamelCase com prefixo semântico (CRUD ou verbo no infinitivo)"},
+		{"NOM002", "Nomenclatura", "Entries devem iniciar com 'pl' seguido de letra maiúscula"},
+		{"NOM003", "Nomenclatura", "#define deve usar UpperCamelCase ou código de mensagem (ESxxx/ENxxx/EWxxx)"},
+		{"NOM004", "Nomenclatura", "Parâmetros devem iniciar com 'p' e variáveis locais com 'v'"},
+		{"NOM005", "Nomenclatura", "Ordem dos parâmetros: pCdOperador 1º (post/put/del), pStResult antes de $t_ds_erro$, $t_ds_erro$ último"},
+		{"COMP001", "Complexidade", "PROCs não devem exceder o limite configurado de linhas de código"},
+		{"COMP002", "Complexidade", "Operations devem delegar lógica para PLs (entries pl...)"},
+		{"COMP003", "Complexidade", "PROCs com muitos parâmetros devem usar struct para agrupá-los"},
+		{"ERR001", "Tratamento de Erros", "Todo activate ou call deve ser seguido de #include lib_coamo:g_vld_erro ou return<g_erroexec>"},
 	}
 }
 
